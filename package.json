@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app",
+    "start": "node server.js",
     "go": "nodemon app.js -e js, hbs"
   },
   "author": "",

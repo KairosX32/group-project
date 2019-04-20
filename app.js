@@ -8,8 +8,8 @@ const Task = require('./models/tasks_model');
 const path = require('path');
 const chalk = require('chalk');
 
-const publicDir = path.join(__dirname, '../public');
-const partials = path.join(__dirname, '../views/partials');
+const publicDir = path.join(__dirname, '/public');
+//const partials = path.join(__dirname, '../views/partials');
 
 const routes = require('./routes/leads');
 const rIndex = require('./routes/routesIndex');
@@ -39,10 +39,10 @@ app.use((req, res, next) => {
 });
 
 
-app.set('view engine', 'hbs');  // Setting handlebars engine
+//app.set('view engine', 'hbs');  // Setting handlebars engine
 app.use(express.static(publicDir));
 
-hbs.registerPartials(partials);
+//hbs.registerPartials(partials);
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
