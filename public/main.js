@@ -3269,26 +3269,26 @@ var ClientService = /** @class */ (function () {
         this.isUpdatedClient = false;
     }
     ClientService.prototype.getClients = function () {
-        //return this.http.get<Client[]>('http://localhost:3001/leads');
-        return this.http.get('leads');
+        return this.http.get('http://localhost:8080/leads');
+        //return this.http.get<Client[]>('leads');
     };
     ClientService.prototype.newClient = function (client) {
         console.log(JSON.stringify(client));
-        //return this.http.post('http://localhost:3001/leads', client);
-        return this.http.post('leads', client);
+        return this.http.post('http://localhost:8080/leads', client);
+        //return this.http.post('leads', client);
     };
     ClientService.prototype.getClient = function (id) {
-        //return this.http.get<Client>(`http://localhost:3001/leads/${id}`);
-        return this.http.get("leads/" + id);
+        return this.http.get("http://localhost:8080/leads/" + id);
+        //return this.http.get<Client>(`leads/${id}`);
     };
     ClientService.prototype.updateClient = function (client) {
         this.isUpdatedClient = true;
-        //return this.http.put(`http://localhost:3001/leads/${client._id}`, client);
-        return this.http.put("leads/" + client._id, client);
+        return this.http.put("http://localhost:8080/leads/" + client._id, client);
+        //return this.http.put(`leads/${client._id}`, client);
     };
     ClientService.prototype.deleteClient = function (id) {
-        //return this.http.delete(`http://localhost:3001/leads/${id}`);
-        return this.http.delete("leads/" + id);
+        return this.http.delete("http://localhost:8080/leads/" + id);
+        //return this.http.delete(`leads/${id}`);
     };
     ClientService.prototype.SwitchIsUpdatedClient = function () {
         this.isUpdatedClient = !this.isUpdatedClient;
