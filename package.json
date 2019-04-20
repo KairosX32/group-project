@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "go": "nodemon app.js -e js, hbs"
+    "go": "nodemon app.js -e js, hbs",
+    "postinstall": "ng build --output-path ./public"
   },
   "author": "",
   "license": "ISC",
@@ -40,8 +41,6 @@
   "devDependencies": {
     "nodemon": "^1.18.10",
     "@angular-devkit/build-angular": "^0.13.8",
-    "@angular/cli": "~7.3.5",
-    "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
