@@ -8,7 +8,7 @@ const Task = require('./models/tasks_model');
 const path = require('path');
 const chalk = require('chalk');
 
-const publicDir = path.join(__dirname, '/public');
+const publicDir = path.join(__dirname, './public');
 //const partials = path.join(__dirname, '../views/partials');
 
 const routes = require('./routes/leads');
