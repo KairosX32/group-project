@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node.js",
     "go": "nodemon app.js -e js, hbs"
   },
   "author": "",
