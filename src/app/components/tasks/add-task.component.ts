@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../models/Task';
 
-
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
@@ -36,7 +35,6 @@ export class AddTaskComponent implements OnInit {
       }); 
     } else {
       //add new client
-      //this.clients.push(this.client);
       this.taskService.newTask(value).subscribe(task => {
         console.log(task)
       });

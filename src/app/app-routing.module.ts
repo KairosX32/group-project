@@ -11,6 +11,7 @@ import { ClientDetailsComponent } from './components/client-details/client-detai
 import { TasksComponent } from './components/tasks/tasks.component';
 import { AddTaskComponent } from './components/tasks/add-task.component';
 import { EditTaskComponent } from './components/tasks/edit-task.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 import { AuthGuard } from './guards/auth.guard';
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'tasks', component: TasksComponent, canActivate:[AuthGuard]},
   {path: 'task/add', component: AddTaskComponent, canActivate:[AuthGuard]},
   {path: 'tasks/task/edit/:id', component: EditTaskComponent, canActivate:[AuthGuard]},
+  {path: 'calendar', component: CalendarComponent, canActivate:[AuthGuard]},
   {path: '**', component: NotFoundComponent},
 ]
 

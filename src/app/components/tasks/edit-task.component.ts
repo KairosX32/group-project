@@ -48,9 +48,6 @@ export class EditTaskComponent implements OnInit {
       this.flashMessage.show('Task updated.', {
         cssClass: 'alert-success', timeout: 4000
       });
-      //this.router.navigate([`/client/${this._id}`]);
-      //this.clientService.getClient(this._id)
-      //  .subscribe(client => this.client = client);
     }
   }
 

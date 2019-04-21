@@ -4,6 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http"
 import { FlashMessagesModule } from 'angular2-flash-messages';
 
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { FlatpickrModule } from 'angularx-flatpickr';
+
 import { environment} from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -27,6 +33,7 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import {TaskService } from './services/task.service';
 import { AddTaskComponent } from './components/tasks/add-task.component';
 import { EditTaskComponent } from './components/tasks/edit-task.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +50,8 @@ import { EditTaskComponent } from './components/tasks/edit-task.component';
     NotFoundComponent,
     TasksComponent,
     AddTaskComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +61,14 @@ import { EditTaskComponent } from './components/tasks/edit-task.component';
     AngularFireAuthModule,
     FormsModule,
     FlashMessagesModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    NgbModalModule,
+    BrowserAnimationsModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [ClientService, AuthService, TaskService],
   bootstrap: [AppComponent]

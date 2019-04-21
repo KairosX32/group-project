@@ -38,7 +38,6 @@ export class EditClientComponent implements OnInit {
       });
     }
 
-
     onSubmit({value, valid}: {value: Client, valid: boolean}) {
       if(!valid) {
         this.flashMessage.show('Please fill out the form correctly.', {
@@ -54,10 +53,6 @@ export class EditClientComponent implements OnInit {
         this.flashMessage.show('Client updated.', {
           cssClass: 'alert-success', timeout: 4000
         });
-        //this.router.navigate([`/client/${this._id}`]);
-        //this.clientService.getClient(this._id)
-        //  .subscribe(client => this.client = client);
       }
     }
-
 }
