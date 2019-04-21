@@ -51,16 +51,6 @@ app.use(bodyParser.json());
 routes(app);
 rIndex(app);
 
-//app.use((req, res, next) => {
-//    res.setHeader('Access-Control-Allow-Origin', "*");          // defines which domains can access our server resources
-//    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-Width, Content-Type, Accept")               // restricts req to domains with a certain set of headers besides default headers
-//    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS")       // controls which http verbs may be used to send requests
-//    next();
-//})
-
-
-
-
 app.get('/', (req, res) => {
     res.render('index', {
         title: 'Exodus CRM'

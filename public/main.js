@@ -43,8 +43,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_edit_client_edit_client_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/edit-client/edit-client.component */ "./src/app/components/edit-client/edit-client.component.ts");
 /* harmony import */ var _components_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/not-found/not-found.component */ "./src/app/components/not-found/not-found.component.ts");
 /* harmony import */ var _components_client_details_client_details_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/client-details/client-details.component */ "./src/app/components/client-details/client-details.component.ts");
-/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
-/* harmony import */ var _components_tasks_tasks_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/tasks/tasks.component */ "./src/app/components/tasks/tasks.component.ts");
+/* harmony import */ var _components_tasks_tasks_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/tasks/tasks.component */ "./src/app/components/tasks/tasks.component.ts");
+/* harmony import */ var _components_tasks_add_task_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/tasks/add-task.component */ "./src/app/components/tasks/add-task.component.ts");
+/* harmony import */ var _components_tasks_edit_task_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/tasks/edit-task.component */ "./src/app/components/tasks/edit-task.component.ts");
+/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
+
+
 
 
 
@@ -58,13 +62,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: '', component: _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["DashboardComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: '', component: _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["DashboardComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__["AuthGuard"]] },
     { path: 'login', component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"] },
     { path: 'register', component: _components_register_register_component__WEBPACK_IMPORTED_MODULE_5__["RegisterComponent"] },
-    { path: 'client/add', component: _components_add_client_add_client_component__WEBPACK_IMPORTED_MODULE_6__["AddClientComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'client/edit/:id', component: _components_edit_client_edit_client_component__WEBPACK_IMPORTED_MODULE_7__["EditClientComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'client/:id', component: _components_client_details_client_details_component__WEBPACK_IMPORTED_MODULE_9__["ClientDetailsComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'tasks', component: _components_tasks_tasks_component__WEBPACK_IMPORTED_MODULE_11__["TasksComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'client/add', component: _components_add_client_add_client_component__WEBPACK_IMPORTED_MODULE_6__["AddClientComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__["AuthGuard"]] },
+    { path: 'client/edit/:id', component: _components_edit_client_edit_client_component__WEBPACK_IMPORTED_MODULE_7__["EditClientComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__["AuthGuard"]] },
+    { path: 'client/:id', component: _components_client_details_client_details_component__WEBPACK_IMPORTED_MODULE_9__["ClientDetailsComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__["AuthGuard"]] },
+    { path: 'tasks', component: _components_tasks_tasks_component__WEBPACK_IMPORTED_MODULE_10__["TasksComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__["AuthGuard"]] },
+    { path: 'task/add', component: _components_tasks_add_task_component__WEBPACK_IMPORTED_MODULE_11__["AddTaskComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__["AuthGuard"]] },
+    { path: 'tasks/task/edit/:id', component: _components_tasks_edit_task_component__WEBPACK_IMPORTED_MODULE_12__["EditTaskComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__["AuthGuard"]] },
     { path: '**', component: _components_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_8__["NotFoundComponent"] },
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -77,7 +83,7 @@ var AppRoutingModule = /** @class */ (function () {
             imports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { onSameUrlNavigation: 'reload' })
             ],
-            providers: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]]
+            providers: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__["AuthGuard"]]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -181,6 +187,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./services/auth.service */ "./src/app/services/auth.service.ts");
 /* harmony import */ var _components_tasks_tasks_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/tasks/tasks.component */ "./src/app/components/tasks/tasks.component.ts");
 /* harmony import */ var _services_task_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./services/task.service */ "./src/app/services/task.service.ts");
+/* harmony import */ var _components_tasks_add_task_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/tasks/add-task.component */ "./src/app/components/tasks/add-task.component.ts");
+/* harmony import */ var _components_tasks_edit_task_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/tasks/edit-task.component */ "./src/app/components/tasks/edit-task.component.ts");
+
+
 
 
 
@@ -224,7 +234,9 @@ var AppModule = /** @class */ (function () {
                 _components_login_login_component__WEBPACK_IMPORTED_MODULE_18__["LoginComponent"],
                 _components_register_register_component__WEBPACK_IMPORTED_MODULE_19__["RegisterComponent"],
                 _components_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_20__["NotFoundComponent"],
-                _components_tasks_tasks_component__WEBPACK_IMPORTED_MODULE_24__["TasksComponent"]
+                _components_tasks_tasks_component__WEBPACK_IMPORTED_MODULE_24__["TasksComponent"],
+                _components_tasks_add_task_component__WEBPACK_IMPORTED_MODULE_26__["AddTaskComponent"],
+                _components_tasks_edit_task_component__WEBPACK_IMPORTED_MODULE_27__["EditTaskComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -303,7 +315,6 @@ var AddClientComponent = /** @class */ (function () {
             leadSource: '',
             leadStatus: '** new lead **',
         };
-        this.disableBalanceOnAdd = true;
     }
     AddClientComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1042,6 +1053,208 @@ var SidebarComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/tasks/add-task.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/components/tasks/add-task.component.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdGFza3MvYWRkLXRhc2suY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/components/tasks/add-task.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/components/tasks/add-task.component.html ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\n  <div class=\"col-md-6\">\n    <a routerLink=\"/tasks\" class=\"btn btn-link\">\n    <i class=\"fa fa-arrow-circle-o-left\"></i> Back To All Tasks\n  </a>\n  </div>\n  <div class=\"col-md-6\">\n\n  </div>\n</div>\n\n<div class=\"card\">\n  <div class=\"card-header\">\n    Add Task\n  </div>\n  <div class=\"card-body\">\n    <form #taskForm=\"ngForm\" (ngSubmit)=\"onSubmit(taskForm)\">\n      <div class=\"form-group\">\n        <label for=\"title\">Title</label>\n        <input \n          type=\"text\"\n          class=\"form-control\"\n          name=\"title\"\n          #taskTitle=\"ngModel\"\n          [ngClass]=\"{ 'is-invalid':taskTitle.errors && taskTitle.touched }\"\n          [(ngModel)]=\"task.title\"\n          minlength=\"2\"\n          required\n        >\n        <div [hidden]=\"!taskTitle.errors?.required\" class=\"invalid-feedback\">\n            Title required\n        </div>\n        <div [hidden]=\"!taskTitle.errors?.minlength\" class=\"invalid-feedback\">\n            Must be at least 2 characters\n        </div>\n      </div>\n\n      <div class=\"form-group\">\n          <label for=\"content\">Content</label>\n          <input \n            type=\"text\"\n            class=\"form-control\"\n            name=\"content\"\n            #taskContent=\"ngModel\"\n            [ngClass]=\"{ 'is-invalid':taskContent.errors && taskContent.touched }\"\n            [(ngModel)]=\"task.content\"\n            minlength=\"2\"\n            required\n          >\n          <div [hidden]=\"!taskContent.errors?.required\" class=\"invalid-feedback\">\n              Content required\n          </div>\n          <div [hidden]=\"!taskContent.errors?.minlength\" class=\"invalid-feedback\">\n              Must be at least 2 characters\n          </div>\n        </div>\n\n\n            <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary btn-block\">\n\n    </form>\n\n    \n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/tasks/add-task.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/components/tasks/add-task.component.ts ***!
+  \********************************************************/
+/*! exports provided: AddTaskComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddTaskComponent", function() { return AddTaskComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_task_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/task.service */ "./src/app/services/task.service.ts");
+
+
+
+
+
+var AddTaskComponent = /** @class */ (function () {
+    function AddTaskComponent(router, flashMessage, taskService) {
+        this.router = router;
+        this.flashMessage = flashMessage;
+        this.taskService = taskService;
+        this.task = {
+            title: '',
+            content: ''
+        };
+    }
+    AddTaskComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.taskService.getTasks()
+            .subscribe(function (tasks) { return _this.tasks = tasks; });
+    };
+    AddTaskComponent.prototype.onSubmit = function (_a) {
+        var _this = this;
+        var value = _a.value, valid = _a.valid;
+        //console.log(value, valid);
+        if (!valid) {
+            this.flashMessage.show("Please fill out the form correctly", {
+                cssClass: 'alert-danger', timeout: 4000
+            });
+        }
+        else {
+            //add new client
+            //this.clients.push(this.client);
+            this.taskService.newTask(value).subscribe(function (task) {
+                console.log(task);
+            });
+            //show flash message
+            this.flashMessage.show("New task added", {
+                cssClass: 'alert-success', timeout: 4000
+            });
+            //redirect to dashboard
+            this.router.navigate(['/tasks']);
+            this.taskService.getTasks()
+                .subscribe(function (tasks) { return _this.tasks = tasks; });
+        }
+    };
+    AddTaskComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-task',
+            template: __webpack_require__(/*! ./add-task.component.html */ "./src/app/components/tasks/add-task.component.html"),
+            styles: [__webpack_require__(/*! ./add-task.component.css */ "./src/app/components/tasks/add-task.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"],
+            _services_task_service__WEBPACK_IMPORTED_MODULE_4__["TaskService"]])
+    ], AddTaskComponent);
+    return AddTaskComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/tasks/edit-task.component.css":
+/*!**********************************************************!*\
+  !*** ./src/app/components/tasks/edit-task.component.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdGFza3MvZWRpdC10YXNrLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/tasks/edit-task.component.html":
+/*!***********************************************************!*\
+  !*** ./src/app/components/tasks/edit-task.component.html ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\n    <div class=\"col-md-6\">\n      <a routerLink=\"/tasks\" class=\"btn btn-link\">\n      <i class=\"fa fa-arrow-circle-o-left\"></i> Back To All Tasks\n    </a>\n    </div>\n    <div class=\"col-md-6\">\n  \n    </div>\n  </div>\n  \n  <div class=\"card\">\n    <div class=\"card-header\">\n      Edit Task\n    </div>\n    <div class=\"card-body\">\n      <form #taskForm=\"ngForm\" (ngSubmit)=\"onSubmit(taskForm)\">\n        <div class=\"form-group\">\n          <label for=\"title\">Title</label>\n          <input \n            type=\"text\"\n            class=\"form-control\"\n            name=\"title\"\n            #taskTitle=\"ngModel\"\n            [ngClass]=\"{ 'is-invalid':taskTitle.errors && taskTitle.touched }\"\n            [(ngModel)]=\"task.title\"\n            minlength=\"2\"\n            required\n          >\n          <div [hidden]=\"!task.title.errors?.required\" class=\"invalid-feedback\">\n              Title required\n          </div>\n          <div [hidden]=\"!task.title.errors?.minlength\" class=\"invalid-feedback\">\n              Must be at least 2 characters\n          </div>\n        </div>\n  \n        <div class=\"form-group\">\n            <label for=\"content\">Content</label>\n            <input \n              type=\"text\"\n              class=\"form-control\"\n              name=\"content\"\n              #taskContent=\"ngModel\"\n              [ngClass]=\"{ 'is-invalid':taskContent.errors && taskContent.touched }\"\n              [(ngModel)]=\"task.content\"\n              minlength=\"2\"\n              required\n            >\n            <div [hidden]=\"!taskContent.errors?.required\" class=\"invalid-feedback\">\n                Content required\n            </div>\n            <div [hidden]=\"!taskContent.errors?.minlength\" class=\"invalid-feedback\">\n                Must be at least 2 characters\n            </div>\n          </div>\n  \n              \n              <input type=\"submit\" value=\"Save\" class=\"btn btn-primary btn-block\">\n  \n      </form>\n  \n      \n    </div>\n  </div>\n  "
+
+/***/ }),
+
+/***/ "./src/app/components/tasks/edit-task.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/components/tasks/edit-task.component.ts ***!
+  \*********************************************************/
+/*! exports provided: EditTaskComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditTaskComponent", function() { return EditTaskComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _services_task_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/task.service */ "./src/app/services/task.service.ts");
+
+
+
+
+
+var EditTaskComponent = /** @class */ (function () {
+    function EditTaskComponent(taskService, flashMessage, route) {
+        this.taskService = taskService;
+        this.flashMessage = flashMessage;
+        this.route = route;
+        this.task = {
+            title: '',
+            content: ''
+        };
+    }
+    EditTaskComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        //get id from url
+        this._id = this.route.snapshot.params['id'];
+        //get client
+        this.taskService.getTask(this._id).subscribe(function (task) {
+            _this.task = task;
+            //console.log(this.client);
+        });
+    };
+    EditTaskComponent.prototype.onSubmit = function (_a) {
+        var value = _a.value, valid = _a.valid;
+        if (!valid) {
+            this.flashMessage.show('Please fill out the form correctly.', {
+                cssClass: 'alert-danger', timeout: 4000
+            });
+        }
+        else {
+            // add id to task
+            value._id = this._id;
+            // update client
+            this.taskService.updateTask(value).subscribe(function (res) {
+                console.log(res);
+            });
+            this.flashMessage.show('Task updated.', {
+                cssClass: 'alert-success', timeout: 4000
+            });
+            //this.router.navigate([`/client/${this._id}`]);
+            //this.clientService.getClient(this._id)
+            //  .subscribe(client => this.client = client);
+        }
+    };
+    EditTaskComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-edit-task',
+            template: __webpack_require__(/*! ./edit-task.component.html */ "./src/app/components/tasks/edit-task.component.html"),
+            styles: [__webpack_require__(/*! ./edit-task.component.css */ "./src/app/components/tasks/edit-task.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_task_service__WEBPACK_IMPORTED_MODULE_4__["TaskService"],
+            angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+    ], EditTaskComponent);
+    return EditTaskComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/tasks/tasks.component.css":
 /*!******************************************************!*\
   !*** ./src/app/components/tasks/tasks.component.css ***!
@@ -1060,7 +1273,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-md-6\">\n    <h2><i class=\"fa fa-tasks\"></i> Tasks</h2>\n  </div>\n  <div class=\"col-md-6\">\n    \n  </div>\n</div>\n<table *ngIf=\"tasks?.length > 0; else noTasks\" class=\"table table-striped\">\n<thead class=\"thead-inverse\">\n  <tr>\n    <th>Task Title</th>\n    <th>Task Description</th>\n    <th></th>\n  </tr>\n</thead>\n<tbody>\n  <tr *ngFor=\"let task of tasks\">\n    <td> {{ task.title }} </td>\n    <td> {{ task.content }}</td>\n    <!--<td><a routerLink=\"client/{{ client._id }}\" class=\"btn btn-secondary btn-sm\"><i class=\"fa fa-arrow-circle-o-right\"> Details</i></a></td>-->\n  </tr>\n</tbody>\n\n</table>\n\n<ng-template #noTasks>\n  <hr>\n  <h5>There are no tasks in the system</h5>\n</ng-template>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-md-6\">\n    <h2><i class=\"fa fa-tasks\"></i> Tasks</h2>\n  </div>\n  <div class=\"col-md-4\">\n  </div>\n  <div class=\"col-md-2\">\n      <a routerLink=\"/task/add\" class=\"btn btn-success btn-block\">\n        <i class=\"fa fa-plus\"> New</i></a>\n    \n  </div>\n</div>\n<table *ngIf=\"tasks?.length > 0; else noTasks\" class=\"table table-striped\">\n<thead class=\"thead-inverse\">\n  <tr>\n    <th>Task Title</th>\n    <th>Task Description</th>\n    <th></th>\n  </tr>\n</thead>\n<tbody>\n  <tr *ngFor=\"let task of tasks\">\n    <td> {{ task.title }} </td>\n    <td> {{ task.content }}</td>\n    <td><a routerLink=\"/tasks/task/edit/{{ task._id }}\" class=\"btn btn-dark btn-sm\"><i class=\"fa fa-edit fa-xs\"></i></a></td>\n    <td><button (click)=\"onDeleteClick(task._id)\" class=\"btn btn-danger btn-sm\"><i class=\"fa fa-trash fa-xs\"></i></button></td>\n    <!--<td><a routerLink=\"task/{{ task._id }}\" class=\"btn btn-secondary btn-sm\"><i class=\"fa fa-arrow-circle-o-right\"> Details</i></a></td>-->\n  </tr>\n  \n</tbody>\n\n</table>\n\n<ng-template #noTasks>\n  <hr>\n  <h5>There are no tasks in the system</h5>\n</ng-template>"
 
 /***/ }),
 
@@ -1076,13 +1289,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TasksComponent", function() { return TasksComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_task_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/task.service */ "./src/app/services/task.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _services_task_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/task.service */ "./src/app/services/task.service.ts");
+
+
 
 
 
 var TasksComponent = /** @class */ (function () {
-    function TasksComponent(taskService) {
+    function TasksComponent(taskService, flashMessage, router) {
         this.taskService = taskService;
+        this.flashMessage = flashMessage;
+        this.router = router;
     }
     TasksComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1090,13 +1310,26 @@ var TasksComponent = /** @class */ (function () {
             .subscribe(function (tasks) { return _this.tasks = tasks; });
         console.log(this.tasks);
     };
+    TasksComponent.prototype.onDeleteClick = function (id) {
+        if (confirm('Are you sure?')) {
+            this.taskService.deleteTask(id).subscribe(function (message) {
+                console.log(message);
+            });
+            this.flashMessage.show('Task removed!', {
+                cssClass: 'alert-success', timeout: 4000
+            });
+            this.ngOnInit();
+        }
+    };
     TasksComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-tasks',
             template: __webpack_require__(/*! ./tasks.component.html */ "./src/app/components/tasks/tasks.component.html"),
             styles: [__webpack_require__(/*! ./tasks.component.css */ "./src/app/components/tasks/tasks.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_task_service__WEBPACK_IMPORTED_MODULE_4__["TaskService"],
+            angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], TasksComponent);
     return TasksComponent;
 }());
@@ -1233,30 +1466,36 @@ var ClientService = /** @class */ (function () {
         this.isUpdatedClient = false;
     }
     ClientService.prototype.getClients = function () {
+        //1st return for local development
         //return this.http.get<Client[]>('http://localhost:8080/leads');
+        //2nd return for heroku deployment
         return this.http.get('leads');
     };
     ClientService.prototype.newClient = function (client) {
         console.log(JSON.stringify(client));
+        //1st return for local development
         //return this.http.post('http://localhost:8080/leads', client);
+        //2nd return for heroku deployment
         return this.http.post('leads', client);
     };
     ClientService.prototype.getClient = function (id) {
+        //1st return for local development
         //return this.http.get<Client>(`http://localhost:8080/leads/${id}`);
+        //2nd return for heroku deployment
         return this.http.get("leads/" + id);
     };
     ClientService.prototype.updateClient = function (client) {
         this.isUpdatedClient = true;
+        //1st return for local development
         //return this.http.put(`http://localhost:8080/leads/${client._id}`, client);
+        //2nd return for heroku deployment
         return this.http.put("leads/" + client._id, client);
     };
     ClientService.prototype.deleteClient = function (id) {
+        //1st return for local development
         //return this.http.delete(`http://localhost:8080/leads/${id}`);
+        //2nd return for heroku deployment
         return this.http.delete("leads/" + id);
-    };
-    ClientService.prototype.SwitchIsUpdatedClient = function () {
-        this.isUpdatedClient = !this.isUpdatedClient;
-        console.log(this.isUpdatedClient);
     };
     ClientService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -1292,7 +1531,32 @@ var TaskService = /** @class */ (function () {
         this.http = http;
     }
     TaskService.prototype.getTasks = function () {
-        return this.http.get('http://localhost:3001/tasks');
+        //1st return for local development
+        //return this.http.get<Task[]>('http://localhost:8080/tasks');
+        //2nd return for heroku deployment
+        return this.http.get('tasks');
+    };
+    TaskService.prototype.newTask = function (task) {
+        //1st return for local development
+        //return this.http.post('http://localhost:8080/tasks', task);
+        //2nd return for heroku deployment
+        return this.http.post('tasks', task);
+    };
+    TaskService.prototype.getTask = function (id) {
+        //1st return for local development
+        //return this.http.get<Task>(`http://localhost:8080/tasks/${id}`);
+        //2nd return for heroku deployment
+        return this.http.get("tasks/" + id);
+    };
+    TaskService.prototype.updateTask = function (task) {
+        //return this.http.put(`http://localhost:8080/tasks/${task._id}`, task);
+        //2nd return for heroku deployment
+        return this.http.put("tasks/" + task._id, task);
+    };
+    TaskService.prototype.deleteTask = function (id) {
+        //return this.http.delete(`http://localhost:8080/tasks/${id}`);
+        //2nd return for heroku deployment
+        return this.http.delete("tasks/" + id);
     };
     TaskService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
