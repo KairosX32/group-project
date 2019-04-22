@@ -1,48 +1,58 @@
-const LeadEntry = require('../models/leads_model');             //going to need to load the mongoose model that is going to handle the logs, the schema
-
+const Lead = require('../models/leads_model');             //going to need to load the mongoose model that is going to handle the logs, the schema
 
 //controllers job is to accept incoming requests from a route & then do something with the data thats coming in, i.e CRUD
-
-
+// .index .show .create .destroy are defined actions that perform CRUD
 
 //Get All
-exports.index = function(req, res) {
-    LeadEntry.find({},  function(err, leadEntry){
-        if(err) res.send(err)
-        res.json(leadEntry);                //takes our entry from mongoDB and then into our mongoose model and then into our controller and print it out as json to the person who req it
-    })
+exports.index = (req, res) => {
+    Lead.find({}).then((lead) => {              // using mongoose find query to find all data for a route without a filter
+        res.status(200).json(lead);
+    }).catch((err) => {
+        res.send(err);
+    });                  
+};
+
+
+//Get by ID
+exports.show = (req, res) => {                          // when you go to leads/id it will send you back the data for that one single lead with the id 
+    Lead.findById(req.params.id).then((lead) => {           // filtering by id 
+        if (lead) {
+            res.status(200).json(lead);         // sending back data
+        } else {
+            res.status(404).json({message: 'Lead not found!'});
+        }                           
+    }).catch((err) => {
+        res.status(500).send(err);
+    });                                                                
 };
 
 //Post
-exports.create = function(req, res) {
-    const newLeadEntry = new LeadEntry(req.body);
+exports.create = (req, res) => {
+    const newLead = new Lead(req.body);   // Creating a new lead that follows our mongoose model
 
-    newLeadEntry.save(function (err, leadEntry){        //saving to mongo db
-        if(err) res.send(err)
-        res.json(leadEntry);
-    })
-};
-
-//Get by ID
-exports.show = function (req, res) {                     // when you go to log-entries/id it will send you back the json for that one single log entry with the id 
-    LeadEntry.findById(req.params.id, function (err, leadEntry){                //name of the variable in your route is what determines the key name on req.params
-        if(err) res.send(err)
-        res.json(leadEntry)
-    })
+    newLead.save().then((lead) => {             //saving to mongo db
+        res.status(201).json(lead);
+    }).catch((err) => {
+        res.status(400).send(err);
+    })               
 };
 
 //Put
-exports.update = function (req, res) {
-    LeadEntry.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, function(err, leadEntry) {
-        if(err) res.send(err)
-        res.json(leadEntry)
-    })
+exports.update =  (req, res) => {   
+    Lead.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}).then((lead) => {                 // finding data by filtering through id and updating it & returning the modified document
+        res.status(200).json(lead);
+    }).catch((err) => {
+        res.send(err);
+    })          
 };
 
+
 //Delete
-exports.destroy = function (req, res) {
-    LeadEntry.deleteOne({_id: req.params.id}, function(err, leadEntry){
-        if(err) res.send(err)
+exports.destroy =  (req, res) => {
+    Lead.deleteOne({_id: req.params.id}).then(() => {          // deleting data by filtering through id
         res.json({message: `Lead (${req.params.id}) successfully deleted.`});
+    }).catch((err) => {
+        res.send(err);
     })
 }
+

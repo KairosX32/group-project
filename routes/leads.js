@@ -1,8 +1,8 @@
-module.exports = function (app) {
+module.exports =  (app) => {
     const controller = require('../controllers/leads_controller');
 
     app.route('/leads')
-        .get(controller.index)  //get method returns multiple
+        .get(controller.index)   //get method returns multiple
         .post(controller.create)        //post method
 
     app.route('/leads/:id')
