@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Setting up DB
 mongoose.Promise = global.Promise;
 const server = 'ds015995.mlab.com:15995';
 const database = 'exodus';
